@@ -1,0 +1,16 @@
+.links {
+  margin-bottom: 10px;
+  flex-direction: row;
+  text-align: left;
+
+  a {
+    color: #fff;
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
