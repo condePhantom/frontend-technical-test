@@ -48,20 +48,23 @@ const Header: FC<HeaderProps> = ({ title }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h4"
-            component="div"
-            sx={{
-              flexGrow: 0,
-              display: { xs: "none", sm: "block" },
-              cursor: "pointer",
-            }}
-          >
-            DEMO Streaming
-          </Typography>
+          <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
+            <Typography
+              variant="h4"
+              component="div"
+              sx={{
+                flexGrow: 0,
+                display: { xs: "none", sm: "block" },
+                cursor: "pointer",
+              }}
+            >
+              DEMO Streaming
+            </Typography>
+          </Link>
           <Box
             sx={{
               display: { xs: "none", sm: "block" },
+              color: "white",
             }}
           >
             <Link to={"/"} style={{ textDecoration: "none" }}>
@@ -69,7 +72,7 @@ const Header: FC<HeaderProps> = ({ title }) => {
                 variant="text"
                 disableRipple
                 sx={{
-                  color: "#FFF",
+                  color: "white",
                   textTransform: "capitalize",
                   mr: 2,
                   "&:focus": {
@@ -78,11 +81,11 @@ const Header: FC<HeaderProps> = ({ title }) => {
                   },
                   "&:hover": {
                     backgroundColor: "transparent",
-                    textDecoration: "underline",
+                    textDecoration: "none",
                   },
                 }}
               >
-                Login
+                Log in
               </Button>
             </Link>
             <Link to={"/"} style={{ textDecoration: "none" }}>
@@ -90,17 +93,16 @@ const Header: FC<HeaderProps> = ({ title }) => {
                 variant="contained"
                 disableRipple
                 sx={{
-                  color: "#FFF",
                   backgroundColor: "rgb(65, 65, 65)",
                   borderRadius: 0,
                   textTransform: "capitalize",
+                  "&:hover": {
+                    backgroundColor: "rgb(65, 65, 65)",
+                    textDecoration: "none",
+                  },
                   "&:focus": {
                     outline: "none",
                     boxShadow: "none",
-                  },
-                  "&:hover": {
-                    backgroundColor: "transparent",
-                    textDecoration: "underline",
                   },
                 }}
               >
