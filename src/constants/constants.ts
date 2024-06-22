@@ -24,3 +24,16 @@ export const footerLinks = [
     url: "#"
   }
 ]
+
+export const categories = [
+  {
+    label: "SERIES",
+    title: "Popular Series",
+    url: "/series",
+  },
+  {
+    label: "MOVIES",
+    title: "Popular Movies",
+    url: "/movies"
+  },
+]
