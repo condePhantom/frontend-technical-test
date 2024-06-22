@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Typography, Link, Grid } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import facebookIcon from "../../assets/social/facebook-white.svg";
 import instagramIcon from "../../assets/social/instagram-white.svg";
 import twitterIcon from "../../assets/social/twitter-white.svg";
@@ -9,7 +9,11 @@ import microsoftStoreIcon from "../../assets/store/windows-store.svg";
 import styles from "./Footer.module.css";
 import LinkList from "../atoms/LinkList";
 import { footerLinks } from "../../constants/constants";
+import IconsStack from "../atoms/IconsStack";
 
+//NOTE: This could be updated to a complex object to handle social media or store urls
+const socialIcons = [facebookIcon, twitterIcon, instagramIcon];
+const storeIcons = [appStoreIcon, googlePlayIcon, microsoftStoreIcon];
 const Footer: FC = () => {
   return (
     <footer>
@@ -32,47 +36,8 @@ const Footer: FC = () => {
         </Grid>
         <Grid item xs={12} md={6} px={8} py={3}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} p={2}>
-              <Grid
-                item
-                className={styles.socialIcons}
-                sx={{ justifyContent: { xs: "center", md: "left" } }}
-              >
-                <Link href="#">
-                  <img src={facebookIcon} alt="Facebook" />
-                </Link>
-                <Link href="#">
-                  <img src={twitterIcon} alt="Twitter" />
-                </Link>
-                <Link href="#">
-                  <img src={instagramIcon} alt="Instagram" />
-                </Link>
-              </Grid>
-            </Grid>
-            <Grid item xs={12} sm={6} p={2}>
-              <Grid item className={styles.storeIcons}>
-                <Grid
-                  container
-                  sx={{ justifyContent: { xs: "center", md: "left" } }}
-                >
-                  <Grid item>
-                    <Link href="#">
-                      <img src={appStoreIcon} alt="App Store" />
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Link href="#">
-                      <img src={googlePlayIcon} alt="Google Play" />
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Link href="#">
-                      <img src={microsoftStoreIcon} alt="Microsoft Store" />
-                    </Link>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
+            <IconsStack imagesSrc={socialIcons} width="30px" height="30px" />
+            <IconsStack imagesSrc={storeIcons} width="120px" height="40px" />
           </Grid>
         </Grid>
       </Box>
