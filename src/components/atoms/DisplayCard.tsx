@@ -1,19 +1,23 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
-import styles from "./CategoryCard.module.css";
+import styles from "./DisplayCard.module.css";
 import { Link } from "react-router-dom";
 
-interface CategoryCardProps {
+interface DisplayCardProps {
   image: string;
   label: string;
   title: string;
   url: string;
 }
 
-const CategoryCard: FC<CategoryCardProps> = ({ image, label, title, url }) => {
+const CategoryCard: FC<DisplayCardProps> = ({ image, label, title, url }) => {
   return (
     <Box className={styles.card}>
-      <Link to={url} className={styles.title}>
+      <Link
+        to={"/"}
+        className=""
+        style={{ textDecoration: "none", color: "white" }}
+      >
         <Box
           className={styles.imageContainer}
           sx={{ backgroundImage: `url(${image})` }}
