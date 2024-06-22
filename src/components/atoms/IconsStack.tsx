@@ -10,19 +10,20 @@ interface IconsStackProps {
 const IconsStack: FC<IconsStackProps> = ({ imagesSrc = [], height, width }) => {
   return (
     <Grid item xs={12} sm={6} p={2}>
-      <Grid
-        item
-        sx={{ display: "flex", justifyContent: { xs: "center", md: "left" } }}
-      >
-        {imagesSrc?.map((image) => (
-          <Link href="#">
-            <img
-              src={image}
-              alt="Facebook"
-              style={{ margin: "0 10px", width: width, height: height }}
-            />
-          </Link>
-        ))}
+      <Grid item sx={{ display: "flex" }}>
+        <Grid container sx={{ justifyContent: { xs: "center", md: "left" } }}>
+          {imagesSrc?.map((image) => (
+            <Grid item my={{ xs: 1, md: 0 }}>
+              <Link href="#">
+                <img
+                  src={image}
+                  alt="Facebook"
+                  style={{ margin: "0 10px", width: width, height: height }}
+                />
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );
