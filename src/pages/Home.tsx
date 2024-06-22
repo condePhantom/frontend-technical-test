@@ -4,7 +4,7 @@ import HomeCategories from "../components/organisms/HomeCategories";
 
 const Home: FC = () => {
   return (
-    <BaseLayout>
+    <BaseLayout title={"Popular Titles"}>
       <HomeCategories />
     </BaseLayout>
   );
