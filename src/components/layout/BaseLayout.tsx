@@ -7,7 +7,7 @@ const BaseLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Header title="Popular Titles" />
-      <Container fixed sx={{ maxWidth: "100%", minHeight: 600 }}>
+      <Container fixed sx={{ maxWidth: "100%", minHeight: 550, mt: 3 }}>
         {children}
       </Container>
       <Footer />
