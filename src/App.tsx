@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import Series from "./pages/Series";
 
 const App: FC = () => {
   return (
@@ -16,6 +18,8 @@ const App: FC = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/series" element={<Series />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
