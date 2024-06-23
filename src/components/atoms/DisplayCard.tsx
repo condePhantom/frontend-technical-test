@@ -1,32 +1,65 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import styles from "./DisplayCard.module.css";
 import { Link } from "react-router-dom";
+import noImage from "../../assets/no-image.jpg";
 
 interface DisplayCardProps {
   image: string;
-  label: string;
+  label?: string;
   title: string;
-  url: string;
+  url?: string;
+  onClick?: () => void;
 }
 
-const CategoryCard: FC<DisplayCardProps> = ({ image, label, title, url }) => {
+const CategoryCard: FC<DisplayCardProps> = ({
+  image,
+  label,
+  title,
+  url,
+  onClick,
+}) => {
+  const [imgSrc, setImgSrc] = useState(image);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = image;
+    img.onload = () => setImgSrc(image);
+    img.onerror = () => setImgSrc(noImage);
+  });
   return (
-    <Box className={styles.card}>
+    <Box
+      className={styles.card}
+      sx={{ backgroundColor: url ? "rgb(30, 30, 30)" : "transparent" }}
+      onClick={() => {
+        /*onClick();*/ alert("click!");
+      }}
+    >
       <Link
-        to={"/"}
+        to={url || ""}
         className=""
         style={{ textDecoration: "none", color: "white" }}
       >
         <Box
           className={styles.imageContainer}
-          sx={{ backgroundImage: `url(${image})` }}
+          sx={{
+            backgroundImage: `url(${imgSrc})`,
+            backgroundSize: url ? "auto" : "cover",
+            "&:hover": {
+              opacity: "0.4",
+              border: "1px solid white",
+            },
+          }}
         >
-          <Typography variant="h4" className={styles.label}>
-            {label}
-          </Typography>
+          {label && (
+            <Typography variant="h4" className={styles.label}>
+              {label}
+            </Typography>
+          )}
         </Box>
-        <Typography variant="subtitle1">{title}</Typography>
+        <Typography variant="subtitle1" color="black" bgcolor="white">
+          {title}
+        </Typography>
       </Link>
     </Box>
   );
