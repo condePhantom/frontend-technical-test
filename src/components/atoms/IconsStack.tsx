@@ -12,8 +12,8 @@ const IconsStack: FC<IconsStackProps> = ({ imagesSrc = [], height, width }) => {
     <Grid item xs={12} sm={6} p={2}>
       <Grid item sx={{ display: "flex" }}>
         <Grid container sx={{ justifyContent: { xs: "center", md: "left" } }}>
-          {imagesSrc?.map((image) => (
-            <Grid item my={{ xs: 1, md: 0 }}>
+          {imagesSrc?.map((image, i) => (
+            <Grid item my={{ xs: 1, md: 0 }} key={"Icon-" + i}>
               <Link href="#">
                 <img
                   src={image}

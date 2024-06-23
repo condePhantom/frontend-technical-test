@@ -14,8 +14,8 @@ interface CategoriesListProps {
 const CategoriesList: FC<CategoriesListProps> = ({ categories }) => {
   return (
     <>
-      {categories?.map((category) => (
-        <Box display={"flex"}>
+      {categories?.map((category, i) => (
+        <Box display={"flex"} key={"category-" + i}>
           <DisplayCard {...category} image={placeholder} />
         </Box>
       ))}

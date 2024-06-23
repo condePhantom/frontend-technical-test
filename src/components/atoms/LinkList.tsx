@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 
 import { Grid, Typography, Link } from "@mui/material";
 import styles from "./LinkList.module.css";
@@ -16,10 +16,10 @@ const LinkList: FC<LinkListProps> = ({ items = [] }) => {
       <Typography variant="body1">
         {items?.map(({ title, url }, i) => {
           return (
-            <>
+            <Fragment key={"link" + i}>
               <Link href={url}>{title}</Link>{" "}
               {i < items.length - 1 ? "|" : null}
-            </>
+            </Fragment>
           );
         })}
       </Typography>
