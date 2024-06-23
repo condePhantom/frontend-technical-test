@@ -31,9 +31,7 @@ const CategoryCard: FC<DisplayCardProps> = ({
     <Box
       className={styles.card}
       sx={{ backgroundColor: url ? "rgb(30, 30, 30)" : "transparent" }}
-      onClick={() => {
-        /*onClick();*/ alert("click!");
-      }}
+      onClick={onClick}
     >
       <Link
         to={url || ""}
@@ -45,10 +43,12 @@ const CategoryCard: FC<DisplayCardProps> = ({
           sx={{
             backgroundImage: `url(${imgSrc})`,
             backgroundSize: url ? "auto" : "cover",
-            "&:hover": {
-              opacity: "0.4",
-              border: "1px solid white",
-            },
+            ...(!url && {
+              "&:hover": {
+                opacity: "0.4",
+                border: "1px solid white",
+              },
+            }),
           }}
         >
           {label && (
