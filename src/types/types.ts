@@ -1,3 +1,4 @@
+import { SelectChangeEvent } from "@mui/material";
 export interface Program {
   title: string;
   description: string;
@@ -12,6 +13,10 @@ export interface Program {
   releaseYear: number
 }
 
-export interface GetProgramResponse {
-  total: number
+export interface ProgramPaginatorProps {
+  currentPage: number;
+  programsPerPage: number;
+  count: number;
+  handlePageChange : (event: React.ChangeEvent<unknown>, page: number) => void;
+  handleProgramsPerPageChange: ( event: SelectChangeEvent) => void
 }
