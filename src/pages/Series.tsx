@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import BaseLayout from "../components/layout/BaseLayout";
 import DisplayPrograms from "../components/organisms/DisplayPrograms";
 import { SelectChangeEvent } from "@mui/material";
@@ -6,13 +6,21 @@ import { ProgramPaginatorProps } from "../types/types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../store";
 import { setCurrentPage, setSeriesPerPage } from "../store/seriesSlice";
+import { useNavigate } from "react-router-dom";
 
 const Series: FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const series = useSelector((state: RootState) => state.series.series);
   const currentPage = useSelector(
     (state: RootState) => state.series.currentPage
   );
+
+  useEffect(() => {
+    if (!series.length) {
+      navigate("/");
+    }
+  }, [navigate, series]);
 
   const seriesPerPage = useSelector(
     (state: RootState) => state.series.seriesPerPage

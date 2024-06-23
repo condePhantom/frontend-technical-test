@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import BaseLayout from "../components/layout/BaseLayout";
 import DisplayPrograms from "../components/organisms/DisplayPrograms";
 import { SelectChangeEvent } from "@mui/material";
@@ -6,8 +6,10 @@ import { ProgramPaginatorProps } from "../types/types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../store";
 import { setCurrentPage, setMoviesPerPage } from "../store/moviesSlice";
+import { useNavigate } from "react-router-dom";
 
 const Movies: FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const currentPage = useSelector(
     (state: RootState) => state.movies.currentPage
@@ -16,6 +18,12 @@ const Movies: FC = () => {
     (state: RootState) => state.movies.moviesPerPage
   );
   const movies = useSelector((state: RootState) => state.movies.movies);
+
+  useEffect(() => {
+    if (!movies.length) {
+      navigate("/");
+    }
+  }, [navigate, movies]);
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
