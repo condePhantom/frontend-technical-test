@@ -3,16 +3,21 @@ import { Box } from "@mui/material";
 import DisplayCard from "../atoms/DisplayCard";
 import { Program } from "../../types/types";
 
-interface DisplayCardProps {
+interface DisplayCardListProps {
   programs: Program[];
+  onClick: (prog: Program) => void;
 }
 
-const DisplayCardList: FC<DisplayCardProps> = ({ programs }) => {
+const DisplayCardList: FC<DisplayCardListProps> = ({ programs, onClick }) => {
   return (
     <>
-      {programs?.map((prgm) => (
+      {programs?.map((prog) => (
         <Box display={"flex"}>
-          <DisplayCard {...prgm} image={prgm?.images["Poster Art"].url} />
+          <DisplayCard
+            {...prog}
+            image={prog?.images["Poster Art"].url}
+            onClick={() => onClick(prog)}
+          />
         </Box>
       ))}
     </>
