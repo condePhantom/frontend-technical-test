@@ -7,7 +7,7 @@ import {
   MenuItem,
   FormControl,
 } from "@mui/material";
-import { ProgramPaginatorProps } from "../../types/types";
+import { ProgramPaginatorProps } from "../../../types/types";
 
 const ProgramPaginator: FC<ProgramPaginatorProps> = ({
   programsPerPage,
