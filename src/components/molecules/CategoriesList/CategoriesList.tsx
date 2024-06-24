@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
-import DisplayCard from "../atoms/DisplayCard/DisplayCard";
-import placeholder from "../../assets/placeholder.png";
+import DisplayCard from "../../atoms/DisplayCard/DisplayCard";
+import placeholder from "../../../assets/placeholder.png";
 
-interface CategoriesListProps {
+export interface CategoriesListProps {
   categories: {
     label: string;
     title: string;

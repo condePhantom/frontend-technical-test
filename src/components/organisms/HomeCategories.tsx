@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
-import CategoriesList from "../molecules/CategoriesList";
+import CategoriesList from "../molecules/CategoriesList/CategoriesList";
 import { categories } from "../../constants/constants";
 
 const HomeCategories: FC = () => {
