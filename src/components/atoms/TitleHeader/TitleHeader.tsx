@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Toolbar, AppBar, Typography } from "@mui/material";
 
-interface TitleHeaderProps {
+export interface TitleHeaderProps {
   title: string;
 }
 const TitleHeader: FC<TitleHeaderProps> = ({ title }) => {
