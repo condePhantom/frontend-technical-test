@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
 import { Box } from "@mui/material";
-import DisplayCardList from "../molecules/DisplayCardList/DisplayCardList";
-import ProgramModal from "../molecules/ProgramModal/ProgramModal";
-import ProgramPaginator from "../atoms/ProgramPaginator/ProgramPaginator";
-import { Program, ProgramPaginatorProps } from "../../types/types";
+import DisplayCardList from "../../molecules/DisplayCardList/DisplayCardList";
+import ProgramModal from "../../molecules/ProgramModal/ProgramModal";
+import ProgramPaginator from "../../atoms/ProgramPaginator/ProgramPaginator";
+import { Program, ProgramPaginatorProps } from "../../../types/types";
 
-interface DisplayProgramsProps {
+export interface DisplayProgramsProps {
   programs: Program[];
   paginator: ProgramPaginatorProps;
 }

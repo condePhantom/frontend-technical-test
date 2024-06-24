@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import BaseLayout from "../components/layout/BaseLayout";
-import DisplayPrograms from "../components/organisms/DisplayPrograms";
+import DisplayPrograms from "../components/organisms/DisplayPrograms/DisplayPrograms";
 import { SelectChangeEvent } from "@mui/material";
 import { ProgramPaginatorProps } from "../types/types";
 import { useDispatch, useSelector } from "react-redux";
