@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { Box, Typography, Grid } from "@mui/material";
-import facebookIcon from "../../assets/social/facebook-white.svg";
-import instagramIcon from "../../assets/social/instagram-white.svg";
-import twitterIcon from "../../assets/social/twitter-white.svg";
-import appStoreIcon from "../../assets/store/app-store.svg";
-import googlePlayIcon from "../../assets/store/play-store.svg";
-import microsoftStoreIcon from "../../assets/store/windows-store.svg";
+import facebookIcon from "../../../assets/social/facebook-white.svg";
+import instagramIcon from "../../../assets/social/instagram-white.svg";
+import twitterIcon from "../../../assets/social/twitter-white.svg";
+import appStoreIcon from "../../../assets/store/app-store.svg";
+import googlePlayIcon from "../../../assets/store/play-store.svg";
+import microsoftStoreIcon from "../../../assets/store/windows-store.svg";
 import styles from "./Footer.module.css";
-import LinkList from "../atoms/LinkList/LinkList";
-import { footerLinks } from "../../constants/constants";
-import IconsStack from "../atoms/IconsStack/IconsStack";
+import LinkList from "../../atoms/LinkList/LinkList";
+import { footerLinks } from "../../../constants/constants";
+import IconsStack from "../../atoms/IconsStack/IconsStack";
 
 //NOTE: This could be updated to a complex object to handle social media or store urls
 const socialIcons = [facebookIcon, twitterIcon, instagramIcon];
