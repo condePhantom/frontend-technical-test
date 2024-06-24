@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link, Grid } from "@mui/material";
 
-interface IconsStackProps {
+export interface IconsStackProps {
   imagesSrc: string[];
   height: string;
   width: string;
@@ -17,7 +17,7 @@ const IconsStack: FC<IconsStackProps> = ({ imagesSrc = [], height, width }) => {
               <Link href="#">
                 <img
                   src={image}
-                  alt="Facebook"
+                  alt={"img-" + i}
                   style={{ margin: "0 10px", width: width, height: height }}
                 />
               </Link>

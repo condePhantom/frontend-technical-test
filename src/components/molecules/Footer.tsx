@@ -7,9 +7,9 @@ import appStoreIcon from "../../assets/store/app-store.svg";
 import googlePlayIcon from "../../assets/store/play-store.svg";
 import microsoftStoreIcon from "../../assets/store/windows-store.svg";
 import styles from "./Footer.module.css";
-import LinkList from "../atoms/LinkList";
+import LinkList from "../atoms/LinkList/LinkList";
 import { footerLinks } from "../../constants/constants";
-import IconsStack from "../atoms/IconsStack";
+import IconsStack from "../atoms/IconsStack/IconsStack";
 
 //NOTE: This could be updated to a complex object to handle social media or store urls
 const socialIcons = [facebookIcon, twitterIcon, instagramIcon];

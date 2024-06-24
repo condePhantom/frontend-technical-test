@@ -3,7 +3,7 @@ import { FC, Fragment } from "react";
 import { Grid, Typography, Link } from "@mui/material";
 import styles from "./LinkList.module.css";
 
-interface LinkListProps {
+export interface LinkListProps {
   items: {
     title: string;
     url: string;
