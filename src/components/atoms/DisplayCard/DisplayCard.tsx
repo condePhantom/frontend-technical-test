@@ -22,6 +22,7 @@ const CategoryCard: FC<DisplayCardProps> = ({
   const [imgSrc, setImgSrc] = useState(image);
 
   useEffect(() => {
+    //NOTE: This is for validate in case the image src es broken
     const img = new Image();
     img.src = image;
     img.onload = () => setImgSrc(image);

@@ -20,6 +20,7 @@ const Movies: FC = () => {
   const movies = useSelector((state: RootState) => state.movies.movies);
 
   useEffect(() => {
+    //NOTE: in case of entering to the page without having the data loaded in redux
     if (!movies.length) {
       navigate("/");
     }
