@@ -5,7 +5,7 @@ import { RootState, AppDispatch } from "../store";
 import { fetchMovies } from "../store/moviesSlice";
 import { fetchSeries } from "../store/seriesSlice";
 import BaseLayout from "../components/layout/BaseLayout";
-import HomeCategories from "../components/organisms/HomeCategories";
+import HomeCategories from "../components/organisms/HomeCategories/HomeCategories";
 import Loader from "../components/atoms/Loader/Loader";
 
 const Home: FC = () => {
