@@ -17,6 +17,7 @@ const Series: FC = () => {
   );
 
   useEffect(() => {
+    //NOTE: in case of entering to the page without having the data loaded in redux
     if (!series.length) {
       navigate("/");
     }

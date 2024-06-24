@@ -13,6 +13,9 @@ const Home: FC = () => {
   const statusMovies = useSelector((state: RootState) => state.movies.status);
   const statusSeries = useSelector((state: RootState) => state.series.status);
 
+  /*NOTE: In case that we should give more info of the error we can use this variables
+    but in the design is simpler so you only should show the Oops message
+  */
   //const errorMovies = useSelector((state: RootState) => state.movies.error);
   //const errorSeries = useSelector((state: RootState) => state.series.error);
 

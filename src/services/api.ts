@@ -4,6 +4,7 @@ export const get_api = async(endpoint: string) => {
   const response = await(fetch(base_url));
   const data = await response.json();
 
+  //NOTE: Simulate the "filtering" from the API as required
   return data?.entries
   .filter((item: any) => item.programType === endpoint && item.releaseYear >= 2010)
   .sort((a: any, b: any) => a.title.localeCompare(b.title));
