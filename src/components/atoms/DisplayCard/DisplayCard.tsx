@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import styles from "./DisplayCard.module.css";
 import { Link } from "react-router-dom";
-import noImage from "../../assets/no-image.jpg";
+import noImage from "../../../assets/no-image.jpg";
 
 interface DisplayCardProps {
   image: string;
