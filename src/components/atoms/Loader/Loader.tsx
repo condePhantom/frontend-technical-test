@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, CircularProgress, Typography } from "@mui/material";
 
-interface LoaderProps {
+export interface LoaderProps {
   message: string;
 }
 const Loader: FC<LoaderProps> = ({ message }) => {
