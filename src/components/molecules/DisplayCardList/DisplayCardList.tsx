@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
-import DisplayCard from "../atoms/DisplayCard/DisplayCard";
-import { Program } from "../../types/types";
+import DisplayCard from "../../atoms/DisplayCard/DisplayCard";
+import { Program } from "../../../types/types";
 
-interface DisplayCardListProps {
+export interface DisplayCardListProps {
   programs: Program[];
   onClick: (prog: Program) => void;
 }

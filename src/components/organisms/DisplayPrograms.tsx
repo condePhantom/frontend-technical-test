@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { Box } from "@mui/material";
-import DisplayCardList from "../molecules/DisplayCardList";
+import DisplayCardList from "../molecules/DisplayCardList/DisplayCardList";
 import ProgramModal from "../molecules/ProgramModal";
 import ProgramPaginator from "../atoms/ProgramPaginator/ProgramPaginator";
 import { Program, ProgramPaginatorProps } from "../../types/types";
