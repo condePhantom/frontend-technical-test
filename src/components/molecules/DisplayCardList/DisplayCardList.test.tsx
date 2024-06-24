@@ -3,15 +3,8 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import DisplayCardList, { DisplayCardListProps } from "./DisplayCardList";
 
-describe("CategoryCard Component", () => {
-  it("renders the component for category", () => {
-    // const props = {
-    //   image:
-    //     "https://streamcoimg-a.akamaihd.net/000/165/9/1659-PosterArt-b326059d852397768897083483b44324.jpeg",
-    //   label: "Movies Label",
-    //   title: "Popular Movies Title",
-    //   url: "/home",
-    // };
+describe("DisplayCardList Component", () => {
+  it("renders the component for displaycard list", () => {
     const props: DisplayCardListProps = {
       onClick: jest.fn(),
       programs: [
