@@ -8,8 +8,8 @@ import {
   Typography,
   Toolbar,
 } from "@mui/material";
-import Drawer from "../atoms/Drawer/Drawer";
-import TitleHeader from "../atoms/TitleHeader/TitleHeader";
+import Drawer from "../../atoms/Drawer/Drawer";
+import TitleHeader from "../../atoms/TitleHeader/TitleHeader";
 
 import { Link } from "react-router-dom";
 import { Menu as MenuIcon } from "@mui/icons-material";

@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { Container, Box } from "@mui/material";
-import Header from "../molecules/Header";
+import Header from "../molecules/Header/Header";
 import Footer from "../molecules/Footer/Footer";
 
 interface BaseLayoutProps {
