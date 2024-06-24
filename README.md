@@ -1,125 +1,64 @@
-<!-- ![](assets/maxisend-trans.png) -->
-<img src="assets/maxisend-trans.png" alt="logo" width="100px" /> <br />
+# Maxi Send Frontend Technical Test
 
-# Prueba técnica — Frontend developer
+## Welcome to my application for the Maxi Send test.
 
+The application was created with React JS + Typescript as is suggested in te requirements. The application consists of 3 pages: **Home**, **Movies** and **Series**. The Home page shows two blocks which redirect to the Movies and Series page. Inside the other two pages, a list of movies is shown on screen with only the image and the title, to which if you click on one of them, a modal will open and show the information of the movie/series in more detail.
 
-## Objetivo
+The application was deployed with the help of Vercel at the following link:
 
-El objetivo de esta prueba técnica es que el candidato muestre sus habilidades con las herramientas que utilizará luego en su trabajo diario en MaxiSend. Está diseñado para verificar las habilidades de desarrollo front-end utilizando React o Angular y su capacidad para resolver problemas.
+Open [https://frontend-technical-test-sigma.vercel.app/](https://frontend-technical-test-sigma.vercel.app/) to view in the browser.
 
-Pondremos el foco en obtener un **código simple, bien diseñado y organizado, eficaz y testeado**, así como el cumplimiento de todos los requerimientos solicitados.
+## Pre requirements
 
+You need to have node js installed.
 
-## Desarrollo del proyecto
+## Scripts and commands
 
-- Se deberá clonar este repositorio para poder modificarlo y completarlo con la resolución del proyecto.
-- Una vez que su código esté listo, suba el código a un repositorio público propio y envíenos el enlace a dicho repositorio para que lo revisaremos.
+In the project directory, you can execute the following commands:
 
-En el caso de React:
-> Se pueden utilizar herramientas como [create-react-app](https://github.com/facebookincubator/create-react-app) y similares para inicializar el proyecto.
+### `npm start`
 
-En el caso de Angular:
-> Se pueden utilizar herramientas como [ng new angular-name-your-app](https://docs.angular.lat/tutorial/toh-pt0) y similares para inicializar el proyecto.
+Runs the app in the development mode.\
 
+Open [http://localhost:3000/](http://localhost:3000) to view it in the browser.
 
-## Prueba técnica
-Usando la estructura vista en las imágenes proporcionadas como referencia, deberá crear un conjunto de pantallas y componentes  para crear la aplicación solicitada.
+### `npm test`
 
-Se deberá incluir también `README` con instrucciones de configuración/ejecución y cualquier prueba u otra documentación que haya creado como parte de su solución.
+### `npm test -- --watch` (watch mode)
 
-Además, agregue la siguiente información a su archivo `README`:
+You will be able to run the tests and see all the process with the interactive watch mode.\
 
-- ¿Cómo decidió las opciones técnicas y arquitectónicas utilizadas como parte de su solución?
-- ¿Hay alguna mejora que pueda hacer en su envío?
-- ¿Qué haría de manera diferente si se le asignara más tiempo?
+## Libraries used
 
+- Material UI (MUI)
+- react-redux
+- reduxjs/toolkit
+- react-router-dom
+- testing-library
 
-## Detalles
-Necesitará construir las siguientes 3 páginas:
+## Additional notes
 
-- Una página de "Inicio"
-- Una página de "Series"
-- Una página "Películas"
+I was hesitant to handle the url of the json from an ENV file but since it is only a single link and it is dummy data, I decided to handle it directly from the file.
 
-Cree componentes para cada parte de la página (por ejemplo, encabezado, contenido, pie de página, etc.). Dentro de la carpeta `/assets` podrá encontrar distintas imágenes para utilizar.
+### 1.- How did you decide on the technical and architectural choices used as part of your solution?
 
-Las páginas también deben poder utilizarse en dispositivos móviles.
+- Based on the requirements and recommendations made in the challenge, I personally find Material UI a useful tool for component design as it allows us to make detailed configurations. As requested I used MUI in combination with CSS Modules to fulfill one of the requirements.
+- I decided to use the Atomic Design Architecture, because it allows us to have a better organization and distribution of our components, which helps us to be more reusable.
+- I also decided to do the data fetch from the url provided to avoid more steps of running the json-server when running the code locally. Besides that by querying the url there may be more chance to test the fetching errors.
 
-Puede suponer que no tiene que admitir navegadores heredados sin funciones como `fetch` o `flexbox`.
+- Me base en los requerimientos y recomendaciones que hicieron en el challenge, personalmente Material UI me parece una herramienta util para el diseño de componentes ya que nos permite realizar configuraciones detalladas. De igual forma como lo solicitaba use MUI en combinación con CSS Modules para cumplir con uno de los requerimientos.
+- Decidí usar la Arquitectura de Atomic Design, ya que con esta nos permite tener una mejor organización y distribución de nuestros componentes, lo cual nos ayuda a que sea más reutilizables.
+- También decidí hacer el fetch de datos desde la url proporcionada para evitar más pasos de ejecutar el json-server al correr el código de manera local. Además de que al consultar la url puede haya mas probabilidad de probar los errores de fetching.
 
+### 2.- Are there any improvements you could make to your submission?
 
-### Página de “Inicio”
+- I would like to implement the 3rd consideration of pagination, but since there is no API as such the data is loaded on the home page by a simulation of an API, and in view there is a validation on the Movies and Series pages in case the data is not loaded in Redux redirects to Home, taking data from the url for the moment would not be possible since to have data you first have to go through the home page. It would be more feasible if the API came from a remote server.
+- Me gustaría implementar la 3ra consideración de la paginación, pero ya que no existe una API como tal los datos se cargan en la pagina principal por una simulación de una API, y en vista existe una validación en las paginas de Movies y Series en caso que los datos no sean cargados en Redux redireccione a Home, el tomar datos de la url de momento no seria posible ya que para tener datos primero hay que pasar por la pagina principal. Sería mas factible si la API viniera de un servidor remoto.
 
-> Ejemplo de referencia [screens/1-home.jpg](./screens/1-home.jpg).
+### 3.- What would you do differently if you were allotted more time?
 
-Esta será su pantalla index.html.
+- I would have liked to create a specific API to design the pagination and data filtering as a real API, which according to the requirements could be performed in a more optimal way, plus the information could be added to more data which would give us more visual options in the frontend.
+- I would also like to implement the tests for the pages that use Redux and API calls simulating a provider or a mock service worker.
 
-Deberá mostrar 2 bloques que conectarán con las páginas de "Series" y "Películas".
-
-
-### Páginas de “Serie” y “Películas”
-
-> Ejemplo de referencia [screens/2-series.jpg](./screens/2-series.jpg) y [screens/3-movies.jpg](./screens/3-movies.jpg).
-
-Para cada página debería leer los datos desde el archivo JSON [feed/sample.json](https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json), luego:
-
-- Mostrar los primeros 20 resultados (`entries`). No es necesario paginar para ver más resultados. 
-- Mostrar sólo si contienen el atributo `releaseYear` >= `2010`
-- Ordenar los resultados por el atributo `title` de manera ascendente con órden alfanumérico
-- Para la página de "Series" usar resultados con `programType` igual a `series`.
-- Para la página de "Películas" usar resultados con `programType` igual a `movie`. 
-- Los atributos que debes utilizar para mostrar en la caja de cada resultado son:
-  - `title`
-  - `images` → `Poster Art` → `url`
-- Al posicionar el mouse sobre cada resultado la caja debe reducir su opacidad y mostrar borde blanco.
-- Al hacer click sobre el titulo deberá abrirse un popup mostrando la información completa:
-  - `title`
-  - `description`
-  - `releaseYear`
-  - `images` → `Poster Art` → `url`
-
-
-### Otras consideraciones
-
-También necesitará manejar los estados de carga/loading y error de obtener los datos desde el archivo JSON:
-
-- Estado de "Carga/Loading" [screens/1.1-loading.jpg](./screens/1.1-loading.jpg)
-- Estado de "Error" [screens/1.2-error.jpg](./screens/1.2-error.jpg)
-
-
-#### Opcional
-
-- Filtro por año
-  - agregar arriba del listado de series/películas un input que permita filtrar películas por año.
-- Paginación
-  - agregar un selector de cantidad de resultados a mostrar (5, 10, 20)
-  - permitir ir a próxima página de resultados o página anterior
-  - permitir moverse de página en página utilizando un parámetro en la URL
-
-
-## Requisitos de Stack
-
-Para el desarrollo de la aplicación deberá utilizar:
-
-- React / React Hooks / Angular
-- Functional components (React)
-- Redux
-- Librería de estilos (styled-components, CSS modules, o similar)
-- Mobile friendly
-- Desarrollo de servicio para leer los datos del json (axios, fetch, etc.) para simular los estados de carga y error.
-- Unit tests de los componentes (jest, react-testing-library, o similar).
-- Manejo de errores
-- _(opcional)_ TypeScript
-- _(opcional)_ Integration/E2E tests
-- _(opcional)_ Deploy automático
-
-Importante saber:
-- No es necesario crear un entorno de desarrollo/producción.
-- Se pueden utilizar otras librerías que crea conveniente, aunque se recomienda proporcionar una solución básica ajustada a lo solicitado, ya que nuestro objetivo principal es evaluar sus habilidades con React, Angular y Javascript.
-- Como empresa, creemos que la comunicación es la clave del éxito. Entonces, si algo no está claro, o si tiene dudas sobre la tarea, consultanos!
-
-
-> Happy coding!
-
-<img src="https://user-images.githubusercontent.com/5693916/30273942-84252588-96fb-11e7-9420-5516b92cb1f7.gif" width="100">
+- Me hubiera gustado crear una API especifica para diseñar el paginado y el filtrado de datos como una API real, lo cual de acuerdo a los requerimientos se pudieran realizar de manera mas optimas, además de que a la información se le pudiera agregar mas datos lo que nos daria mas opciones visuales en el frontend.
+- También me gustaría implementar los test para las paginas que usan Redux y llamadas a API simulando un provider o un mock service worker.
