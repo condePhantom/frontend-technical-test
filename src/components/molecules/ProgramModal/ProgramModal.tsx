@@ -10,9 +10,9 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import { Program } from "../../types/types";
+import { Program } from "../../../types/types";
 
-interface ProgramModalProps {
+export interface ProgramModalProps {
   program: Program;
   open: boolean;
   onClose: () => void;
