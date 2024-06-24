@@ -3,8 +3,8 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import CategoriesList, { CategoriesListProps } from "./CategoriesList";
 
-describe("CategoryCard Component", () => {
-  it("renders the component for category", () => {
+describe("CategoryList Component", () => {
+  it("renders the component for categories", () => {
     const props: CategoriesListProps = {
       categories: [
         {
